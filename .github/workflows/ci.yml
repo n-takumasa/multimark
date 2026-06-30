@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
+    # branches: [main]
   release:
     types: [published]
 
@@ -42,7 +42,7 @@ jobs:
     name: Build wheels on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     needs: test
-    if: github.event_name == 'release'
+    # if: github.event_name == 'release'
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
